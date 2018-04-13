@@ -28,8 +28,49 @@ body {
 }
 
 /* --- Eget börjar här --- */
+
+/* -- Basic -- */
+body {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    height: 100vh;
+    overflow-y: scroll;
+    color: #6d6d6c;
+    color: rgba(109,109,108, 0.8);
+}
+
+h1 {
+    font-size: 2rem;
+    padding-bottom: 6px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 1.5rem;
+    padding-bottom: 6px;
+    font-weight: 700;
+}
+
+/* -- Bootstrap Overrides -- */
+.nav-link {
+    color: #ffffff !important;
+    color: rgba(255,255,255, 0.8) !important;
+}
+
+
+/* -- Nav -- */
+#current {
+    background-color: #561f54;
+    background-color: rgba(86,31,84, 0.8);
+    border-right-color: #561f54;
+    border-right-color: rgba(86,31,84, 0.8);
+    text-shadow: none;
+}
+
 .bg-nav-color {
     background-color: #6c276a;
+    background-color: rgba(108,39,106, 0.8)
 }
 
 /* Hide/rearrange for smaller screens */

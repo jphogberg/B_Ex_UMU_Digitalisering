@@ -8,17 +8,13 @@
         <ul class="navbar-nav nav-fill">
 
             <li class="nav-item">
-                <a href="@Url.Page("Index")" class="nav-link"
+                <a href="@Url.Page("/Index")" class="nav-link"
                    id="@(ViewBag.Current == "Home" ? "current" : "")">Hem</a>
             </li>
 
             <li class="nav-item">
-                <a href="@Url.Page("About")" class="nav-link"
-                   id="@(ViewBag.Current == "About" ? "current" : "")">Om oss</a>
-            </li>
-            <li class="nav-item">
-                <a href="@Url.Page("Contact")" class="nav-link"
-                   id="@(ViewBag.Current == "Contact" ? "current" : "")">Kontakt</a>
+                <a href="@Url.Page("/Account/Login")" class="nav-link"
+                   id="@(ViewBag.Current == "Login" ? "current" : "")">Logga in</a>
             </li>
         </ul>
     </div>

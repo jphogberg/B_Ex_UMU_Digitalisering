@@ -27,9 +27,7 @@ namespace B_Ex_UMU_Digitalisering.Pages.Account
         public IActionResult OnPost()
         {
             // Skall givetvis ändras
-            var isValidUser =
-                Email == "ab@b.se"
-                && Password == "t0psecret!";
+            var isValidUser = Email == "ab@b.se" && Password == "t0psecret!";
 
             if (!isValidUser)
             {
