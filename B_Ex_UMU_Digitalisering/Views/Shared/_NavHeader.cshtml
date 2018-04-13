@@ -1,0 +1,25 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-nav-color fixed-top py-sm-0">
+    <span class="navbar-brand d-lg-none">MENY</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsiveMenu" aria-controls="responsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="mdi mdi-menu"></span>
+    </button>
+
+    <div class="navbar-collapse collapse justify-content-center" id="responsiveMenu">
+        <ul class="navbar-nav nav-fill">
+
+            <li class="nav-item">
+                <a href="@Url.Page("Index")" class="nav-link"
+                   id="@(ViewBag.Current == "Home" ? "current" : "")">Hem</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="@Url.Page("About")" class="nav-link"
+                   id="@(ViewBag.Current == "About" ? "current" : "")">Om oss</a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Page("Contact")" class="nav-link"
+                   id="@(ViewBag.Current == "Contact" ? "current" : "")">Kontakt</a>
+            </li>
+        </ul>
+    </div>
+</nav>

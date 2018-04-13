@@ -1,0 +1,43 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Logga in";
+}
+
+<fieldset>
+
+    <h2>Logga in</h2>
+    <br />
+
+    <form asp-page="Login" role="form">
+        <div asp-validation-summary="All" class="input-validation-error"></div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="col-md-2 col-form-label"></label>
+            <div class="col-md-10">
+                <input type="email" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="field-validation-error"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="Password" class="col-md-2 col-form-label"></label>
+            <div class="col-md-10">
+                <input type="password" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="field-validation-error"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="RememberMe" class="col-md-2 col-form-label"></label>
+            <input type="checkbox" asp-for="RememberMe" />
+            <span asp-validation-for="RememberMe" class="field-validation-error"></span>
+        </div>
+        <br />
+        <div>
+            <label>&nbsp;</label>
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+    </form>
+</fieldset>
+
