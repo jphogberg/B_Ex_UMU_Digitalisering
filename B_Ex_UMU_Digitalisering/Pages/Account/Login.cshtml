@@ -6,36 +6,36 @@
 }
 
 <fieldset>
-    <h1>Logga in</h1>
+    <h1>@ViewData["Title"]</h1>
 
     <form asp-page="Login" role="form">
         <div asp-validation-summary="All" class="input-validation-error"></div>
 
         <div class="form-group">
-            <label asp-for="Email" class="col-md-2 col-form-label"></label>
+            <label asp-for="Input.Email" class="col-md-2 col-form-label"></label>
             <div class="col-md-10">
-                <input type="email" asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="field-validation-error"></span>
+                <input type="email" asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="field-validation-error"></span>
             </div>
         </div>
         <br />
         <div class="form-group">
-            <label asp-for="Password" class="col-md-2 col-form-label"></label>
+            <label asp-for="Input.Password" class="col-md-2 col-form-label"></label>
             <div class="col-md-10">
-                <input type="password" asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="field-validation-error"></span>
+                <input type="password" asp-for="Input.Password" class="form-control" />
+                <span asp-validation-for="Input.Password" class="field-validation-error"></span>
             </div>
         </div>
         <br />
         <div class="form-group">
-            <label asp-for="RememberMe" class="col-md-2 col-form-label"></label>
-            <input type="checkbox" asp-for="RememberMe" />
-            <span asp-validation-for="RememberMe" class="field-validation-error"></span>
+            <label asp-for="Input.RememberMe" class="col-md-2 col-form-label"></label>
+            <input type="checkbox" asp-for="Input.RememberMe" />
+            <span asp-validation-for="Input.RememberMe" class="field-validation-error"></span>
         </div>
         <br />
         <div>
             <label>&nbsp;</label>
-            <button type="submit" class="btn btn-primary">Log in</button>
+            <button type="submit" class="btn btn-primary">Logga in</button>
         </div>
     </form>
 </fieldset>

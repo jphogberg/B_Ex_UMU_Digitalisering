@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Threading.Tasks;
 using B_Ex_UMU_Digitalisering.Data;
 using B_Ex_UMU_Digitalisering.Extensions;
@@ -9,13 +12,15 @@ using Microsoft.Extensions.Logging;
 
 namespace B_Ex_UMU_Digitalisering.Pages.Account
 {
-    public class LoginModel : PageModel
+    public class RegisterModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger)
+        public RegisterModel(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger)
         {
+            _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
         }
@@ -26,63 +31,54 @@ namespace B_Ex_UMU_Digitalisering.Pages.Account
 
         public string ReturnUrl { get; set; }
 
-        [TempData]
-        public string ErrorMessage { get; set; }
-
         public class InputModel
         {
             [Required]
             [EmailAddress]
-            [Display(Name = "E-post")]
+            [Display(Name = "E-postadress")]
             public string Email { get; set; }
 
             [Required]
+            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Lösenord")]
             public string Password { get; set; }
 
-            [Display(Name = "Kom ihåg mig?")]
-            public bool RememberMe { get; set; }
+            [DataType(DataType.Password)]
+            [Display(Name = "Bekräfta lösenord")]
+            [Compare("Password", ErrorMessage = "Lösenorden måste matcha.")]
+            public string ConfirmPassword { get; set; }
         }
         #endregion
 
         public void OnGet(string returnUrl = null)
         {
-            if (!string.IsNullOrEmpty(ErrorMessage))
-            {
-                ModelState.AddModelError(string.Empty, ErrorMessage);
-            }
-         
             ReturnUrl = returnUrl;
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
-
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe,
-                    lockoutOnFailure: false);
+                var user = new ApplicationUser { Email = Input.Email, UserName = Input.Email };
+                var result = await _userManager.CreateAsync(user, Input.Password);
+
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("Användaren loggade in.");
+                    _logger.LogInformation("Användaren har skapats.");
+
+                    await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(Url.GetLocalUrl(returnUrl));
-                } else
-                {
-                    ModelState.AddModelError(string.Empty, "Felaktiga inloggningsuppgifter.");
-                    return Page();
                 }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+
             }
-
+            // If we got this far, something failed, redisplay form
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostLogoutAsync()
-        {
-            await _signInManager.SignOutAsync();
-            _logger.LogInformation("Användaren loggade ut.");
-            return RedirectToPage("/Index");
         }
     }
 }

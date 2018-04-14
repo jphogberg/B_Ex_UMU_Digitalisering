@@ -24,9 +24,12 @@ namespace B_Ex_UMU_Digitalisering
         {
             // Registrera Identity DB context
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("RouxAcademy")));
+                options.UseSqlServer(Configuration.GetConnectionString("UMUDig")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireNonAlphanumeric = false;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -39,8 +42,7 @@ namespace B_Ex_UMU_Digitalisering
             });
 
             services.AddMvc()
-                // Kräv inlogg för Admin och Account-delar
-                .AddRazorPagesOptions(options => 
+                .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AuthorizeFolder("/Admin");
                     options.Conventions.AuthorizeFolder("/Account");
@@ -55,8 +57,7 @@ namespace B_Ex_UMU_Digitalisering
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
-            }
-            else
+            } else
             {
                 app.UseExceptionHandler("/Error");
             }
