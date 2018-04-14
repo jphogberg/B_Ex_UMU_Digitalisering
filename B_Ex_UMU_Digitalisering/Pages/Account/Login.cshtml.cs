@@ -77,12 +77,5 @@ namespace B_Ex_UMU_Digitalisering.Pages.Account
 
             return Page();
         }
-
-        public async Task<IActionResult> OnPostLogoutAsync()
-        {
-            await _signInManager.SignOutAsync();
-            _logger.LogInformation("Användaren loggade ut.");
-            return RedirectToPage("/Index");
-        }
     }
 }
