@@ -6,25 +6,29 @@
     <title>@ViewData["Title"] - B-Examen</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <!-- Material Design Icons -->
         <link rel="stylesheet" href="~/lib/mdi/css/materialdesignicons.css" />
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700" rel="stylesheet" type="text/css">
+        <!-- Egen CSS -->
+        <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
+        <!-- Bootstrap 4 -->
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <!-- Egen CSS -->
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/lib/mdi/css/materialdesignicons.min.css" />
+        <!-- Material Design Icons -->
+        <link rel="stylesheet" href="http://cdn.materialdesignicons.com/2.2.43/css/materialdesignicons.min.css" />
     </environment>
 </head>
 <body>
-    @Html.Partial("_NavHeader")
     <div class="container">
+        @Html.Partial("_NavHeader")
         @RenderBody()
         <hr />
         <footer>
