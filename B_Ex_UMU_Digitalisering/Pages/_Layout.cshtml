@@ -6,24 +6,23 @@
     <title>@ViewData["Title"] - B-Examen</title>
 
     <environment include="Development">
-        <!-- Bootstrap 4 -->
+        <!-- Bootstrap 4.1 -->
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <!-- Material Design Icons -->
-        <link rel="stylesheet" href="~/lib/mdi/css/materialdesignicons.css" />
+        <!-- Font Awesome -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,600,700" rel="stylesheet">
+
         <!-- Egen CSS -->
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        <!-- Bootstrap 4 -->
+        <!-- Bootstrap 4.1 -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <!-- Egen CSS -->
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        <!-- Material Design Icons -->
-        <link rel="stylesheet" href="http://cdn.materialdesignicons.com/2.2.43/css/materialdesignicons.min.css" />
     </environment>
 </head>
 <body>

@@ -6,16 +6,15 @@
         </button>
 
         <div class="navbar-collapse collapse ml-auto" id="responsiveMenu">
-            <ul class="navbar-nav nav-fill">
+            <ul class="navbar-nav">
 
                 <li class="nav-item">
                     <a href="@Url.Page("/Index")" class="nav-link"
-                       id="@(ViewBag.Current == "Home" ? "current" : "")">Hem</a>
+                       id="@(ViewBag.Current == "Home" ? "current" : "")"><i class="fas fa-home" aria-hidden="true"></i> HEM</a>
                 </li>
-
                 <li class="nav-item">
                     <a href="@Url.Page("/Account/Login")" class="nav-link"
-                       id="@(ViewBag.Current == "Login" ? "current" : "")">Logga in</a>
+                       id="@(ViewBag.Current == "Login" ? "current" : "")"><i class="fas fa-user" aria-hidden="true"></i> LOGGA IN</a>
                 </li>
             </ul>
         </div>
