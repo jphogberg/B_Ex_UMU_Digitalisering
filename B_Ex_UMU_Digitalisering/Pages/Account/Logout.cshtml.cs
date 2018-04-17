@@ -17,7 +17,9 @@ namespace B_Ex_UMU_Digitalisering.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
         }
-        
+
+        //TODO: Redirecta från Logoutsidan direkt vid utlogg, så den kan ha en normal länk ist för formulär.
+
         public async Task<IActionResult> OnPostAsync()
         {
             await _signInManager.SignOutAsync();

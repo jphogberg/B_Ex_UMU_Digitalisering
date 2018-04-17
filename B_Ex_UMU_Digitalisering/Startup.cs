@@ -36,10 +36,10 @@ namespace B_Ex_UMU_Digitalisering
             services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");
 
             // Kräv SSL / https globalt
-            services.Configure<MvcOptions>(options =>
-            {
-                options.Filters.Add(new RequireHttpsAttribute());
-            });
+            //services.Configure<MvcOptions>(options =>
+            //    {
+            //        options.Filters.Add(new RequireHttpsAttribute {Permanent = true});
+            //    });
 
             services.AddMvc()
                 .AddRazorPagesOptions(options =>
@@ -62,17 +62,16 @@ namespace B_Ex_UMU_Digitalisering
                 app.UseExceptionHandler("/Error");
             }
 
-
             // Redirecta alla http anrop till https
             var options = new RewriteOptions()
-                .AddRedirectToHttps();
+                .AddRedirectToHttpsPermanent();
             app.UseRewriter(options);
 
             app.UseStaticFiles();
 
             app.UseAuthentication();
 
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
