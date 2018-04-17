@@ -26,7 +26,8 @@ h2 {
 
 /* -- Login Page -- */
 .login-form-control {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
     border-radius: 2rem;
     background-color: #eee8ed;
     background-color: rgba(238, 232, 237, 0.8);
@@ -44,6 +45,11 @@ h2 {
 
 .btn-login {
     border-radius: 2rem;
+}
+
+#loginContent {
+    padding-top: 65%;
+    color: #fff;
 }
 
 /* -- Start Page -- */
@@ -150,15 +156,37 @@ input[type="checkbox"] {
         padding: 16px;
     }
 
-    #loginContent {
-        padding-top: 30%;
+    #topContent1, #topContent2, #topContent3 {
+        background: #fff;
+        margin-top: 3px;
+        margin-right: 3px;
+        padding: 0 16px;
+    }
+
+    #topContent1 {
+        background: rgb(168, 88, 163);
         color: #fff;
+    }
+
+    #topContent2 {
+        background: rgb(251, 174, 44);
+        color: #fff;
+    }
+
+    #topContent3 {
+        background: rgb(2, 99, 174);
+        color: #fff;
+    }
+
+    #loginContent {
+        padding-top: 33%;
     }
 
     .content-container {
         padding-right: 0;
         padding-left: 0;
     }
+
     /* -- Nav -- */
     .bg-nav-color {
         background-color: #eee8ed;
@@ -181,10 +209,10 @@ input[type="checkbox"] {
         height: 131px;
         background: url(../images/banner.jpg) no-repeat center;
     }
+
     /* -- Footer -- */
     #footerContent {
-        /*background: #fadeca;
-        background: rgba(250, 222, 202, 1.0);*/
+        text-align: center;
         background: #fcefe4;
         background: rgba(252, 239, 228, 1.0);
         margin-top: 3px;
@@ -225,8 +253,7 @@ input[type="checkbox"] {
     .nav-link-name:hover {
         color: #561f54 !important;
         color: rgba(86,31,84, 0.8) !important;
-        background-color: #f4f4f4 !important;
-        background-color: rgba(244, 244, 244, 0.8) !important;
+        background-color: transparent !important;
     }
 }
 

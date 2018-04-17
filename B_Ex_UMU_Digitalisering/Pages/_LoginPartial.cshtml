@@ -14,12 +14,4 @@
             </li>
         </ul>
     </form>
-} else
-{
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a asp-page="/Account/Login" class="nav-link last"
-               id="@(ViewBag.Current == "Login" ? "current" : "")"><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Logga in</a>
-        </li>
-    </ul>
 }
