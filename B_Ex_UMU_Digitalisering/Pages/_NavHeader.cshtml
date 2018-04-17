@@ -1,5 +1,5 @@
 ﻿<header class="sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-nav-color py-sm-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-nav-color py-sm-0 mb-lg-3">
         <span class="navbar-brand d-lg-none">MENY</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsiveMenu" aria-controls="responsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fas fa-bars"></span>
@@ -9,15 +9,15 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a href="@Url.Page("/Index")" class="nav-link"
-                       id="@(ViewBag.Current == "Home" ? "current" : "")"><i class="fas fa-home" aria-hidden="true"></i> HEM</a>
+                       id="@(ViewBag.Current == "Home" ? "current" : "")"><i class="fas fa-home" aria-hidden="true"></i> Hem</a>
                 </li>
                 <li class="nav-item">
                     <a href="@Url.Page("/Index2")" class="nav-link"
-                       id="@(ViewBag.Current == "Home2" ? "current" : "")"><i class="fab fa-accessible-icon" aria-hidden="true"></i> LÄNK 2</a>
+                       id="@(ViewBag.Current == "Home2" ? "current" : "")"><i class="fab fa-accessible-icon" aria-hidden="true"></i> Länk 2</a>
                 </li>
                 <li class="nav-item">
                     <a href="@Url.Page("/Index3")" class="nav-link"
-                       id="@(ViewBag.Current == "Home3" ? "current" : "")"><i class="fas fa-child" aria-hidden="true"></i> LÄNK 3</a>
+                       id="@(ViewBag.Current == "Home3" ? "current" : "")"><i class="fas fa-child" aria-hidden="true"></i> Länk 3</a>
                 </li>
             </ul>
             @await Html.PartialAsync("_LoginPartial")

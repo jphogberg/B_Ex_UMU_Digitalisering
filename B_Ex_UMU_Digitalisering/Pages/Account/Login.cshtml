@@ -5,7 +5,7 @@
     ViewBag.Current = "Login";
 }
 
-<fieldset>
+<div class="container">
     <h1>@ViewData["Title"]</h1>
 
     <form asp-page="Login" role="form">
@@ -13,30 +13,27 @@
 
         <div class="form-group">
             <label asp-for="Input.Email" class="col-md-2 col-form-label"></label>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <input type="email" asp-for="Input.Email" class="form-control" />
                 <span asp-validation-for="Input.Email" class="field-validation-error"></span>
             </div>
         </div>
-        <br />
         <div class="form-group">
             <label asp-for="Input.Password" class="col-md-2 col-form-label"></label>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <input type="password" asp-for="Input.Password" class="form-control" />
                 <span asp-validation-for="Input.Password" class="field-validation-error"></span>
             </div>
         </div>
-        <br />
-        <div class="form-group">
-            <label asp-for="Input.RememberMe" class="col-md-2 col-form-label"></label>
+        <div class="form-group col-md-2">
+            <label asp-for="Input.RememberMe" class="col-form-label"></label>
             <input type="checkbox" asp-for="Input.RememberMe" />
             <span asp-validation-for="Input.RememberMe" class="field-validation-error"></span>
         </div>
-        <br />
-        <div>
+        <div class="form-group">
             <label>&nbsp;</label>
             <button type="submit" class="btn btn-primary">Logga in</button>
         </div>
     </form>
-</fieldset>
+</div>
 

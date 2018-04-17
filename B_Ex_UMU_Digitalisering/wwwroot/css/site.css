@@ -1,6 +1,5 @@
 /* -- Basic -- */
 body {
-    /*font-family: 'Open Sans', Arial, Helvetica, sans-serif;*/
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 0.875rem;
@@ -25,9 +24,18 @@ h2 {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+/* -- FA Overrides -- */
+.fa-bars {
+    color: #fff;
+    color: rgba(255,255,255, 0.8);
+}
+
+input[type="checkbox"] {
+    vertical-align: middle;
+}
+
 /* -- Bootstrap Overrides -- */
 .navbar {
-    padding: 0;
     margin-bottom: 20px;
 }
 
@@ -39,19 +47,19 @@ h2 {
     font-weight: 400;
     text-align: left;
     border-top: 1px solid #dbdbdb;
-    border-top: 1px solid rgba(219,219,219, 0.8);
+    border-top: 1px solid rgba(219,219,219, 0.2);
+    
 }
 
 .last {
     border-right: none !important;
     border-radius: 0;
+    width: 100%;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #fff;
-    color: rgba(255,255,255, 0.8);
-    background-color: #561f54;
-    background-color: rgba(86,31,84, 0.8);
+
+#current {
+    font-weight: 700;
 }
 
 .navbar-toggler, .navbar-toggler:focus {
@@ -77,15 +85,6 @@ h2 {
     }
 
 /* -- Nav -- */
-#current {
-    color: #fff;
-    color: rgba(255,255,255, 0.9);
-    background-color: #561f54;
-    background-color: rgba(86,31,84, 0.8);
-    border-right: 1px solid #561f54;
-    border-right: 1px solid rgba(86,31,84, 0.8);
-    text-shadow: none;
-}
 
 .bg-nav-color {
     background-color: #561f54;
@@ -96,20 +95,15 @@ h2 {
     width: auto !important;
 }
 
-/*nav a {
-    color: #fff !important;
-    color: rgba(255,255,255, 0.9) !important;
-}*/
-
 /* --- Responsiv --- */
 
 /* --- Mobiltelefon/SM --- */
-@media (min-width: 576px) {
-}
+/*@media (min-width: 576px) {
+}*/
 
 /* --- Surfplatta/MD --- */
-@media (min-width: 768px) {
-}
+/*@media (min-width: 768px) {
+}*/
 
 /* --- Dataskärm / LG --- */
 @media (min-width: 992px) {
@@ -119,6 +113,21 @@ h2 {
         background-color: rgba(244, 244, 244, 0.8);
         border-bottom: 2px solid #561f54;
         border-bottom: 2px solid rgba(86, 31, 84, 0.8);
+    }
+    #current {
+        color: #fff;
+        color: rgba(255,255,255, 0.9);
+        background-color: #561f54;
+        background-color: rgba(86,31,84, 0.8);
+        border-right: 1px solid #561f54;
+        border-right: 1px solid rgba(86,31,84, 0.8);
+        text-shadow: none;
+    }
+    /* -- Bootstrap Overrides -- */
+    .navbar {
+        padding: 0.5rem 0;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     .navbar-dark .navbar-nav .nav-link {
         color: #561f54;
@@ -131,11 +140,23 @@ h2 {
         width: 130px;
         border-top: none;
         border-right: 1px solid #dbdbdb;
-        border-right: 1px solid rgba(219,219,219, 0.8);
+        border-right: 1px solid rgba(219,219,219, 0.5);
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: #fff;
+        color: rgba(255,255,255, 0.8);
+        background-color: #561f54;
+        background-color: rgba(86,31,84, 0.8);
+    }
+    .nav-link-name:hover {
+        color: #561f54 !important;
+        color: rgba(86,31,84, 0.8) !important;
+        background-color: #f4f4f4 !important;
+        background-color: rgba(244, 244, 244, 0.8) !important;
     }
 }
 
 /* --- Dataskärm/XL --- */
-@media (min-width: 1200px) {
-}
+/*@media (min-width: 1200px) {
+}*/
 
