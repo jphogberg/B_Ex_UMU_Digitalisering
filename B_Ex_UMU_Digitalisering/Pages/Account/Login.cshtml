@@ -5,35 +5,37 @@
     ViewBag.Current = "Login";
 }
 
-<div class="container">
-    <h1>@ViewData["Title"]</h1>
+<div class="container content-container">
+    <section id="mainContent">
+        <h1>@ViewData["Title"]</h1>
 
-    <form asp-page="Login" role="form">
-        <div asp-validation-summary="All" class="input-validation-error"></div>
+        <form asp-page="Login" role="form">
+            <div asp-validation-summary="All" class="input-validation-error"></div>
 
-        <div class="form-group">
-            <label asp-for="Input.Email" class="col-md-2 col-form-label"></label>
-            <div class="col-md-12">
-                <input type="email" asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="field-validation-error"></span>
+            <div class="form-group">
+                <label asp-for="Input.Email" class="col-md-2 col-form-label"></label>
+                <div class="col-md-12">
+                    <input type="email" asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="field-validation-error"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Input.Password" class="col-md-2 col-form-label"></label>
-            <div class="col-md-12">
-                <input type="password" asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="field-validation-error"></span>
+            <div class="form-group">
+                <label asp-for="Input.Password" class="col-md-2 col-form-label"></label>
+                <div class="col-md-12">
+                    <input type="password" asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="field-validation-error"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-md-2">
-            <label asp-for="Input.RememberMe" class="col-form-label"></label>
-            <input type="checkbox" asp-for="Input.RememberMe" />
-            <span asp-validation-for="Input.RememberMe" class="field-validation-error"></span>
-        </div>
-        <div class="form-group">
-            <label>&nbsp;</label>
-            <button type="submit" class="btn btn-primary">Logga in</button>
-        </div>
-    </form>
+            <div class="form-group col-md-2">
+                <label asp-for="Input.RememberMe" class="col-form-label"></label>
+                <input type="checkbox" asp-for="Input.RememberMe" />
+                <span asp-validation-for="Input.RememberMe" class="field-validation-error"></span>
+            </div>
+            <div class="form-group">
+                <label>&nbsp;</label>
+                <button type="submit" class="btn btn-primary">Logga in</button>
+            </div>
+        </form>
+    </section>
 </div>
 

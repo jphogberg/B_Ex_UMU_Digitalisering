@@ -5,8 +5,8 @@ body {
     font-size: 0.875rem;
     height: 100vh;
     overflow-y: scroll;
-    color: #6d6d6c;
-    color: rgba(109,109,108, 0.8);
+    color: #414042;
+    color: rgba(65, 64, 66, 0.8);
     padding-top: 0;
 }
 
@@ -85,7 +85,6 @@ input[type="checkbox"] {
     }
 
 /* -- Nav -- */
-
 .bg-nav-color {
     background-color: #561f54;
     background-color: rgba(86,31,84, 0.8);    
@@ -107,13 +106,32 @@ input[type="checkbox"] {
 
 /* --- Dataskärm / LG --- */
 @media (min-width: 992px) {
+    /* -- Basic -- */
+    body {
+        background: #414042;
+        background: rgba(65,64,66, 1.0)
+    }
+    #mainContent {
+        /*background: #fcefe4;
+        background: rgba(252, 239, 228, 1.0);*/
+        background: #fff;
+        background: rgb(255, 255, 255);
+        margin-top: 3px;
+        padding: 16px;
+    }
+
+    .content-container {
+        padding-right: 0;
+        padding-left: 0;
+    }
     /* -- Nav -- */
     .bg-nav-color {
-        background-color: #f4f4f4;
-        background-color: rgba(244, 244, 244, 0.8);
+        background-color: #eee8ed;
+        background-color: rgba(238, 232, 237, 0.8);
         border-bottom: 2px solid #561f54;
         border-bottom: 2px solid rgba(86, 31, 84, 0.8);
     }
+
     #current {
         color: #fff;
         color: rgba(255,255,255, 0.9);
@@ -123,10 +141,27 @@ input[type="checkbox"] {
         border-right: 1px solid rgba(86,31,84, 0.8);
         text-shadow: none;
     }
+    .page-banner {
+        height: 131px;
+        background: url(../images/banner.jpg) no-repeat center;
+        
+    }
+    /* -- Footer -- */
+    #footerContent {
+        /*background: #fadeca;
+        background: rgba(250, 222, 202, 1.0);*/
+        background: #fcefe4;
+        background: rgba(252, 239, 228, 1.0);
+        margin-top: 3px;
+        padding: 16px;
+        color: #414042;
+        height: 55px;
+    }
+
     /* -- Bootstrap Overrides -- */
     .navbar {
         padding: 0.5rem 0;
-        max-width: 1200px;
+        max-width: 1110px;
         margin: 0 auto;
     }
     .navbar-dark .navbar-nav .nav-link {
@@ -136,12 +171,13 @@ input[type="checkbox"] {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
-        height: 66px;
+        height: 65px;
         width: 130px;
         border-top: none;
-        border-right: 1px solid #dbdbdb;
-        border-right: 1px solid rgba(219,219,219, 0.5);
+        border-right: 1px solid #bba5ba;
+        border-right: 1px solid rgba(187, 165, 186, 0.8);
     }
+
     .navbar-dark .navbar-nav .nav-link:hover {
         color: #fff;
         color: rgba(255,255,255, 0.8);

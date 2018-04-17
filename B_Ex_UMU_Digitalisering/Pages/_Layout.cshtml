@@ -25,10 +25,11 @@
     </environment>
 </head>
 <body>
-    @Html.Partial("_NavHeader")
+    <header class="page-banner">
+        @Html.Partial("_NavHeader")
+    </header>
     <div class="container">
         @RenderBody()
-        <hr />
         <footer>
             @Html.Partial("_Footer")
         </footer>
