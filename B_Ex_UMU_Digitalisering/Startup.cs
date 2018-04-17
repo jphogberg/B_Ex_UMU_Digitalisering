@@ -35,17 +35,12 @@ namespace B_Ex_UMU_Digitalisering
 
             services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");
 
-            // Kräv SSL / https globalt
-            //services.Configure<MvcOptions>(options =>
-            //    {
-            //        options.Filters.Add(new RequireHttpsAttribute {Permanent = true});
-            //    });
-
             services.AddMvc()
                 .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AuthorizeFolder("/Admin");
                     options.Conventions.AuthorizeFolder("/Account");
+                    options.Conventions.AuthorizeFolder("/");
                     options.Conventions.AllowAnonymousToPage("/Account/Login");
                 });
         }
