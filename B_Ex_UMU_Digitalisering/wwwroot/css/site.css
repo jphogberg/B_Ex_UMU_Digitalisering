@@ -48,7 +48,7 @@ h2 {
 }
 
 #loginContent {
-    padding-top: 65%;
+    padding-top: 45%;
     color: #fff;
 }
 
@@ -159,23 +159,28 @@ input[type="checkbox"] {
     #topContent1, #topContent2, #topContent3 {
         background: #fff;
         margin-top: 3px;
-        margin-right: 3px;
-        padding: 0 16px;
+        /*margin-right: 3px;*/
+        border-right: 3px solid #444;
+        border-bottom: 3px solid #444;
+        height: 100%;
+        width: 100%;
+        padding: 16px;
+        color: #fff;
     }
 
     #topContent1 {
-        background: rgb(168, 88, 163);
-        color: #fff;
+        background: rgb(237, 107, 114);
     }
 
     #topContent2 {
-        background: rgb(251, 174, 44);
-        color: #fff;
+        /*background: rgb(250, 222, 202);*/
+        background: rgb(252, 239, 228);
+        color: rgb(231, 122, 46);
     }
 
     #topContent3 {
-        background: rgb(2, 99, 174);
-        color: #fff;
+        border-right: none;
+        background: rgb(231, 122, 46);
     }
 
     #loginContent {
@@ -213,13 +218,15 @@ input[type="checkbox"] {
     /* -- Footer -- */
     #footerContent {
         text-align: center;
-        background: #fcefe4;
-        background: rgba(252, 239, 228, 1.0);
+        /*background: #fcefe4;
+        background: rgba(252, 239, 228, 1.0);*/
+        /*background: rgb(250, 222, 202);*/
+        background: rgb(249, 228, 130);
         margin-top: 3px;
         padding: 16px;
         color: #414042;
         color: rgba(65, 64, 66, 1.0);
-        height: 55px;
+        height: 55px; /* Skall ej finnas kvar sen när footern fått sitt innehåll */
     }
 
     /* -- Bootstrap Overrides -- */
